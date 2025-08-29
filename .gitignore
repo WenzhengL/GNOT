@@ -1,32 +1,8 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.venv/
-venv/
-.env
-*.egg-info/
-
-# OS / IDE
-.DS_Store
-.vscode/
-.idea/
-.ipynb_checkpoints/
-
-# Data (adjust as needed)
+# Only keep these exclusions as requested
 data/result/
-data/new/
-data/al_*/
-data/checkpoints/
 *.pkl
-*.npz
-*.npy
 
-# Models / weights
-*.pt
-
-# Nested repos
+# Keep nested repo ignored to avoid submodule issues; tell us if you want it included
 active-learning/
 
 # Logs
