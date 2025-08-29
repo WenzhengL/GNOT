@@ -2,8 +2,7 @@
 data/result/
 *.pkl
 
-# Keep nested repo ignored to avoid submodule issues; tell us if you want it included
-active-learning/
+# (No other ignores; include everything else)
 
 # Logs
 logs/

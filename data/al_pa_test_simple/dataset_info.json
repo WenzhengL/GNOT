@@ -1,0 +1,7 @@
+{
+  "name": "al_pa_test_simple",
+  "total_samples": 10,
+  "labeled_samples": 3,
+  "unlabeled_samples": 5,
+  "test_samples": 2
+}

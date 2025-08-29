@@ -1,0 +1,14 @@
+{
+  "strategy": "gv",
+  "select_num": 200,
+  "round": 5,
+  "total_labeled": 850,
+  "total_unlabeled": 2747,
+  "data_update_dir": "/home/v-wenliao/gnot/GNOT/data/al_gv",
+  "temp_data_dir": "/home/v-wenliao/gnot/GNOT/data/al_gv/data",
+  "files_updated": {
+    "al_labeled.pkl": "850 samples",
+    "al_unlabeled.pkl": "2747 samples",
+    "al_test.pkl": "100 samples"
+  }
+}

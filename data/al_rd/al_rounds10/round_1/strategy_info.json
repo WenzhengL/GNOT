@@ -1,0 +1,14 @@
+{
+  "strategy": "random",
+  "select_num": 500,
+  "round": 1,
+  "total_labeled": 500,
+  "total_unlabeled": 2500,
+  "data_update_dir": "/home/v-wenliao/gnot/GNOT/data/al_rd",
+  "temp_data_dir": "/home/v-wenliao/gnot/GNOT/data/al_rd/data",
+  "files_updated": {
+    "al_labeled.pkl": "500 samples",
+    "al_unlabeled.pkl": "2500 samples",
+    "al_test.pkl": "100 samples"
+  }
+}
