@@ -1,0 +1,6 @@
+torch 1.12.1
+cuda None
+is_cuda_available False
+device_count 0
+python 3.10.9 (main, Mar  1 2023, 18:23:06) [GCC 11.2.0]
+platform Linux-5.15.0-1083-nvidia-x86_64-with-glibc2.35
