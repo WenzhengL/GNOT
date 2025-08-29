@@ -415,20 +415,36 @@ class UnitTransformer():
         self.mean = self.mean.to(device)
         self.std = self.std.to(device)
         return self
-
-    def transform(self, X, inverse=True,component='all'):
-        if component == 'all' or 'all-reduce':
+    def transform(self, X, inverse=True, component='all'):
+        # 保证 mean/std 和 X 在同一设备
+        mean = self.mean.to(X.device)
+        std = self.std.to(X.device)
+        if component == 'all' or component == 'all-reduce':
             if inverse:
                 orig_shape = X.shape
-                return (X*(self.std - 1e-8) + self.mean).view(orig_shape)
+                return (X * (std - 1e-8) + mean).view(orig_shape)
             else:
-                return (X-self.mean)/self.std
+                return (X - mean) / std
         else:
             if inverse:
                 orig_shape = X.shape
-                return (X*(self.std[:,component] - 1e-8)+ self.mean[:,component]).view(orig_shape)
+                return (X * (std[:, component] - 1e-8) + mean[:, component]).view(orig_shape)
             else:
-                return (X - self.mean[:,component])/self.std[:,component]
+                return (X - mean[:, component]) / std[:, component]
+            
+    # def transform(self, X, inverse=True,component='all'):
+    #     if component == 'all' or 'all-reduce':
+    #         if inverse:
+    #             orig_shape = X.shape
+    #             return (X*(self.std - 1e-8) + self.mean).view(orig_shape)
+    #         else:
+    #             return (X-self.mean)/self.std
+    #     else:
+    #         if inverse:
+    #             orig_shape = X.shape
+    #             return (X*(self.std[:,component] - 1e-8)+ self.mean[:,component]).view(orig_shape)
+    #         else:
+    #             return (X - self.mean[:,component])/self.std[:,component]
 
 
 

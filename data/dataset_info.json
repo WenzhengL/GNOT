@@ -1,0 +1,19 @@
+{
+  "total_samples": 700,
+  "labeled_samples": 100,
+  "unlabeled_samples": 500,
+  "test_samples": 100,
+  "target_config": {
+    "labeled_target": 100,
+    "unlabeled_target": 500,
+    "test_target": 100
+  },
+  "created_time": "2025-08-06T18:00:01.894952",
+  "data_structure": {
+    "sample_format": "[X, Y, Theta, (empty_branch,)]",
+    "X": "spatial coordinates (N, 3)",
+    "Y": "physics quantities (N, 5) [pressure, wall-shear, x-wall-shear, y-wall-shear, z-wall-shear]",
+    "Theta": "parameters (2,) [curve_length_factor, bending_strength]",
+    "empty_branch": "zeros (N, 1)"
+  }
+}

@@ -12,7 +12,7 @@ def get_args():
     parser = argparse.ArgumentParser(description='GNOT for operator learning')
     parser.add_argument('--dataset',type=str,
                         default='ns2d',
-                        choices = ['heat2d','ns2d','inductor2d','heatsink3d','ns2d_time','darcy2d',])
+                        choices = ['heat2d','al_rd','al_gv','al_qbc','al_pa','al_bz','al_tmp_train','vascular3d', 'ns2d','inductor2d','heatsink3d','ns2d_time','darcy2d',])
 
 
     parser.add_argument('--component',type=str,

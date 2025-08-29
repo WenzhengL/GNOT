@@ -1,0 +1,15 @@
+{
+  "weights": {
+    "pred_diff": 1.0,
+    "pred_diff_fast": 1.0,
+    "qbc": 1.0,
+    "pa": 1.0,
+    "gv": 1.0,
+    "gv_fast": 1.0,
+    "bz": 1.0,
+    "bz_scaled": 1.0,
+    "random": 1.0,
+    "magnitude": 1.0,
+    "diversity": 1.0
+  }
+}

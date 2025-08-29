@@ -34,6 +34,7 @@ def get_dataset(args):
     if args.dataset == "ns2d":
         train_path = './data/ns2d_1100_train.pkl'
         test_path = './data/ns2d_1100_test.pkl'
+        
     elif args.dataset == "inductor2d":
         train_path = "./data/inductor2d_1100_train.pkl"
         test_path = "./data/inductor2d_1100_test.pkl"
@@ -41,6 +42,34 @@ def get_dataset(args):
     elif args.dataset == "heat2d":
         train_path = "./data/heat2d_1100_train.pkl"
         test_path = "./data/heat2d_1100_test.pkl"
+
+    elif args.dataset == "vascular3d":
+        train_path = "./data/vascular3_train.pkl"
+        test_path = "./data/vascular3_test.pkl"
+
+    elif args.dataset == "al_tmp_train":
+        train_path = "./data/al_labeled.pkl"
+        test_path = "./data/al_test.pkl"
+
+    elif args.dataset == "al_gv":
+        train_path = "./data/al_gv/al_labeled.pkl"
+        test_path = "./data/al_gv/al_test.pkl" 
+
+    elif args.dataset == "al_rd":
+        train_path = "./data/al_rd/al_labeled.pkl"
+        test_path = "./data/al_rd/al_test.pkl"
+
+    elif args.dataset == "al_qbc":
+        train_path = "./data/al_qbc/al_labeled.pkl"
+        test_path = "./data/al_qbc/al_test.pkl"
+
+    elif args.dataset == "al_pa":
+        train_path = "./data/al_pa/al_labeled.pkl"
+        test_path = "./data/al_pa/al_test.pkl"
+
+    elif args.dataset == "al_bz":
+        train_path = "./data/al_bz/al_labeled.pkl"
+        test_path = "./data/al_bz/al_test.pkl"
 
     else:
         raise NotImplementedError

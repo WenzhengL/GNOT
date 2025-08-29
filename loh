@@ -1,0 +1,9 @@
+rm al_labeled.pkl
+rm al_test.pkl
+rm al_unlabeled.pkl
+cp ../new/50-2500/al_labeled.pkl ../new/50-2500/al_test.pkl ../new/50-2500/al_unlabeled.pkl .
+
+
+
+
+cp ../al_labeled.pkl ../al_test.pkl ../al_unlabeled.pkl .
