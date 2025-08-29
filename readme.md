@@ -183,3 +183,51 @@ python run_experiment.py \
 ```
 
 Refer to `active-learning/README.md` for details on available sampling methods, models, and flags.
+
+## Using `active-learning` as a Git submodule
+
+If you prefer to link `active-learning` from its upstream repo instead of vendoring its files, set it up as a Git submodule that points to `https://github.com/google/active-learning`.
+
+1) Convert existing folder to a submodule (one-time in this repo)
+
+```bash
+# If you already committed an "active-learning" directory, remove it first
+git rm -r --cached active-learning
+rm -rf active-learning
+git commit -m "chore: remove vendored active-learning"
+
+# Add the upstream as a submodule
+git submodule add https://github.com/google/active-learning active-learning
+git commit -m "chore: add active-learning as git submodule"
+```
+
+2) Clone this repo with submodules
+
+```bash
+# Option A: single step
+git clone --recurse-submodules https://github.com/<you>/GNOT.git
+
+# Option B: init after clone
+git clone https://github.com/<you>/GNOT.git
+cd GNOT
+git submodule update --init --recursive
+```
+
+3) Update submodule to the latest upstream
+
+```bash
+# Update to latest default branch of the submodule
+git submodule update --remote --merge active-learning
+git commit -m "chore: bump active-learning submodule"
+```
+
+Notes:
+- If you maintain your own fork, replace the URL with your fork: `https://github.com/<your-username>/active-learning`.
+- Submodule changes are pointers; after updating the submodule, commit the superproject to record the new submodule revision.
+
+Install dependencies for the submodule after checkout:
+
+```bash
+conda activate gnot_cuda11  # or your env
+pip install -r active-learning/requirements.txt
+```
