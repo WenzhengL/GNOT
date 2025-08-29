@@ -18,9 +18,16 @@ venv/
 data/result/
 data/new/
 data/al_*/
+data/checkpoints/
 *.pkl
 *.npz
 *.npy
+
+# Models / weights
+*.pt
+
+# Nested repos
+active-learning/
 
 # Logs
 logs/
