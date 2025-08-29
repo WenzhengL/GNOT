@@ -120,3 +120,66 @@ If you use GNOT in your research, please use the following BibTeX entry.
   year={2023}
 }
 ```
+
+## Environment and reproducibility
+
+This repo includes captured environment artifacts to help you rebuild the runtime used locally.
+
+- env/environment.yml: conda environment export (from env gnot_cuda11)
+- env/requirements.txt: pip freeze from that environment
+- env/pytorch_cuda_info.txt: snapshot of torch/CUDA availability (if torch installed)
+- env/gpu_list.txt, env/nvidia-smi.txt: GPU/driver/runtime info (if available)
+
+Recreate the environment (recommended):
+
+```bash
+conda env create -f env/environment.yml -n gnot_cuda11
+conda activate gnot_cuda11
+
+# Optional: ensure pip-only deps are present
+pip install -r env/requirements.txt
+```
+
+Notes
+- CUDA and torch wheels depend on your driver/platform; if matching wheels aren’t available, install a compatible CUDA toolkit or use CPU wheels.
+- You can choose a different env name; adjust commands accordingly.
+
+## Upload/ignore policy
+
+Only the following are excluded from version control in this repo:
+- data/result/
+- all files ending with .pkl
+
+Everything else is tracked and pushed.
+
+## active-learning module setup
+
+The `active-learning` folder is a standalone playground for active learning experiments.
+
+Install its dependencies into your environment:
+
+```bash
+conda activate gnot_cuda11  # or your env
+pip install -r active-learning/requirements.txt
+```
+
+Typical usage (from the active-learning directory):
+
+```bash
+cd active-learning
+
+# (Optional) download supported datasets
+python utils/create_data.py --save_dir /path/to/data
+
+# Run an experiment (example flags; see active-learning/README.md for all options)
+python run_experiment.py \
+  --dataset mnist \
+  --sampling_method margin \
+  --warmstart_size 1000 \
+  --batch_size 1000 \
+  --score_method small_cnn \
+  --data_dir /path/to/data \
+  --save_dir /path/to/results
+```
+
+Refer to `active-learning/README.md` for details on available sampling methods, models, and flags.
